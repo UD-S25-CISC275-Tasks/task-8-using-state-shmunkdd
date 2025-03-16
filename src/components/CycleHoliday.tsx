@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 
 export function CycleHoliday(): React.JSX.Element {
-        enum Holiday {
+    enum Holiday {
         Christmas = "🎄",
         Halloween = "🎃",
         IndependenceDay = "🎆",
@@ -10,9 +10,7 @@ export function CycleHoliday(): React.JSX.Element {
         Thanksgiving = "🦃"
     }
 
-
     const [holiday, setHoliday] = useState<Holiday>(Holiday.NewYear);
-
 
     function nextAlphabet(holiday: Holiday): Holiday {
         return {
@@ -24,7 +22,6 @@ export function CycleHoliday(): React.JSX.Element {
         }[holiday];
     }
 
-
     function nextYear(holiday: Holiday): Holiday {
         return {
             [Holiday.NewYear]: Holiday.IndependenceDay,
@@ -35,14 +32,21 @@ export function CycleHoliday(): React.JSX.Element {
         }[holiday];
     }
 
-
     return (
         <div>
             <p>Holiday: {holiday}</p>
-            <Button onClick={() => setHoliday(nextAlphabet(holiday))}>
+            <Button
+                onClick={() => {
+                    setHoliday(nextAlphabet(holiday));
+                }}
+            >
                 Advance by Alphabet
             </Button>
-            <Button onClick={() => setHoliday(nextYear(holiday))}>
+            <Button
+                onClick={() => {
+                    setHoliday(nextYear(holiday));
+                }}
+            >
                 Advance by Year
             </Button>
         </div>
