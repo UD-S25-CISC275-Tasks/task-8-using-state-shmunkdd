@@ -23,5 +23,4 @@ export function ChangeType(): React.JSX.Element {
             </p>
         </div>
     );
-
 }
