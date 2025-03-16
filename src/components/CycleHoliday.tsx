@@ -47,5 +47,4 @@ export function CycleHoliday(): React.JSX.Element {
             </Button>
         </div>
     );
-
 }
